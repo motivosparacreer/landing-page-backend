@@ -31,4 +31,4 @@ const updateUser = async (req, res) => {
   }
 };
 
-module.exports = { createUser };
+module.exports = { createUser, updateUser };
