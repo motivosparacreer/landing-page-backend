@@ -12,6 +12,8 @@ const port = process.env.PORT || 4000;
 dotenv.config();
 connectionDb();
 
+app.use(express.json());
+
 app.use("/", usersRouter);
 
 app.listen(port, () => {
