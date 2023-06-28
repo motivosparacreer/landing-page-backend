@@ -31,4 +31,16 @@ const updateUser = async (req, res) => {
   }
 };
 
-module.exports = { createUser, updateUser };
+const deleteUser = async (req, res) => {
+  try {
+    const { _id } = req.body;
+
+    await usersModel.deleteOne({ _id });
+
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(`${message} eliminar el usuario`);
+  }
+};
+
+module.exports = { createUser, updateUser, deleteUser };
