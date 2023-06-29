@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 
 const dotenv = require("dotenv");
 const { connectionDb } = require("./config/connectiondb.js");
@@ -13,6 +14,8 @@ dotenv.config();
 connectionDb();
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use("/", usersRouter);
 
